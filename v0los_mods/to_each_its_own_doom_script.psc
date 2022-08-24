@@ -1,0 +1,17 @@
+scriptName toEachItsOwnScript extends ObjectReference
+
+import game
+
+BOOL PROPERTY bScholar AUTO
+BOOL PROPERTY bRebel AUTO
+BOOL PROPERTY bAgent AUTO
+BOOL PROPERTY bVeteran AUTO
+BOOL PROPERTY bBloodMage AUTO
+BOOL PROPERTY bGeneralist AUTO
+BOOL PROPERTY bSummoner AUTO
+BOOL PROPERTY bStormChaser AUTO
+BOOL PROPERTY bFromTheShadows AUTO
+BOOL PROPERTY bTreasureHunter AUTO
+BOOL PROPERTY bRogue AUTO
+BOOL PROPERTY bWitchHunter AUTO
+BOOL PROPERTY bSavageFromAtmora AUTO
