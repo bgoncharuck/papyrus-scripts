@@ -26,7 +26,7 @@ SPELL PROPERTY pChampionOfMara AUTO
 SPELL PROPERTY pPrayToStendarr AUTO
 SPELL PROPERTY pChampionOfTalos AUTO
 SPELL PROPERTY pChampionOfZenithar AUTO
-SPELL PROPERTY pChampionOfAzura AUTO
+SPELL PROPERTY pPrayToAzura AUTO
 SPELL PROPERTY pChampionOfBoethiah AUTO
 SPELL PROPERTY pChampionOfMephala AUTO
 
@@ -92,7 +92,7 @@ ELSEIF(bTalos)
 ELSEIF(bZenithar)
     game.getPlayer().addSpell(pChampionOfZenithar)
 ELSEIF(bAzura)
-    game.getPlayer().addSpell(pChampionOfAzura)
+    game.getPlayer().addSpell(pPrayToAzura)
 ELSEIF(bBoethiah)
     game.getPlayer().addSpell(pChampionOfBoethiah)
 ELSEIF(bMephala)
@@ -119,8 +119,8 @@ ELSEIF(game.getPlayer().hasSpell(pChampionOfTalos))
     game.getPlayer().removeSpell(pChampionOfTalos)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfZenithar))
     game.getPlayer().removeSpell(pChampionOfZenithar)
-ELSEIF(game.getPlayer().hasSpell(pChampionOfAzura))
-    game.getPlayer().removeSpell(pChampionOfAzura)
+ELSEIF(game.getPlayer().hasSpell(pPrayToAzura))
+    game.getPlayer().removeSpell(pPrayToAzura)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfBoethiah))
     game.getPlayer().removeSpell(pChampionOfBoethiah)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfMephala))
