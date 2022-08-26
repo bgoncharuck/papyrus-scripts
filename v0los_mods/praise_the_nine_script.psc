@@ -18,7 +18,6 @@ BOOL PROPERTY bMephala
 MESSAGE PROPERTY pPreviousWorshipRemovedMSG AUTO
 
 SPELL PROPERTY pChampionOfAkatosh AUTO
-SPELL PROPERTY pChampionOfArkay AUTO
 SPELL PROPERTY pPrayToArkay AUTO
 SPELL PROPERTY pChampionOfDibella AUTO
 SPELL PROPERTY pChampionOfJulianos AUTO
@@ -27,7 +26,7 @@ SPELL PROPERTY pChampionOfMara AUTO
 SPELL PROPERTY pPrayToStendarr AUTO
 SPELL PROPERTY pChampionOfTalos AUTO
 SPELL PROPERTY pChampionOfZenithar AUTO
-SPELL PROPERTY pPrayToAzura AUTO
+SPELL PROPERTY pChampionOfAzura AUTO
 SPELL PROPERTY pChampionOfBoethiah AUTO
 SPELL PROPERTY pChampionOfMephala AUTO
 
@@ -40,7 +39,7 @@ EVENT onACTIVATE(OBJECTREFERENCE obj)
 
         IF(bAkatosh && game.getPlayer().hasSpell(pChampionOfAkatosh))
             doOnce = TRUE
-        ELSEIF(bArkay && game.getPlayer().hasSpell(pChampionOfArkay))
+        ELSEIF(bArkay && game.getPlayer().hasSpell(pPrayToArkay))
             doOnce = TRUE
         ELSEIF(bDibella && game.getPlayer().hasSpell(pChampionOfDibella))
             doOnce = TRUE
@@ -77,7 +76,6 @@ FUNCTION addWorship()
 IF(bAkatosh)
     game.getPlayer().addSpell(pChampionOfAkatosh)
 ELSEIF(bArkay)
-    game.getPlayer().addSpell(pChampionOfArkay)
     game.getPlayer().addSpell(pPrayToArkay)
 ELSEIF(bDibella)
     game.getPlayer().addSpell(pChampionOfDibella)
@@ -94,7 +92,7 @@ ELSEIF(bTalos)
 ELSEIF(bZenithar)
     game.getPlayer().addSpell(pChampionOfZenithar)
 ELSEIF(bAzura)
-    game.getPlayer().addSpell(pPrayToAzura)
+    game.getPlayer().addSpell(pChampionOfAzura)
 ELSEIF(bBoethiah)
     game.getPlayer().addSpell(pChampionOfBoethiah)
 ELSEIF(bMephala)
@@ -105,8 +103,8 @@ endFUNCTION
 FUNCTION removeWorship()
 IF(game.getPlayer().hasSpell(pChampionOfAkatosh))
     game.getPlayer().removeSpell(pChampionOfAkatosh)
-ELSEIF(game.getPlayer().hasSpell(pChampionOfArkay))
-    game.getPlayer().removeSpell(pChampionOfArkay)
+ELSEIF(game.getPlayer().hasSpell(pPrayToArkay))
+    game.getPlayer().removeSpell(pPrayToArkay)
     game.getPlayer().removeSpell(pPrayToArkay)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfDibella))
     game.getPlayer().removeSpell(pChampionOfDibella)
@@ -122,8 +120,8 @@ ELSEIF(game.getPlayer().hasSpell(pChampionOfTalos))
     game.getPlayer().removeSpell(pChampionOfTalos)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfZenithar))
     game.getPlayer().removeSpell(pChampionOfZenithar)
-ELSEIF(game.getPlayer().hasSpell(pPrayToAzura))
-    game.getPlayer().removeSpell(pPrayToAzura)
+ELSEIF(game.getPlayer().hasSpell(pChampionOfAzura))
+    game.getPlayer().removeSpell(pChampionOfAzura)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfBoethiah))
     game.getPlayer().removeSpell(pChampionOfBoethiah)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfMephala))
