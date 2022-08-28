@@ -3,6 +3,7 @@ scriptName praiseTheNineScript extends ObjectReference
 import game
 
 BOOL PROPERTY bAkatosh
+BOOL PROPERTY bAuriel
 BOOL PROPERTY bArkay
 BOOL PROPERTY bDibella
 BOOL PROPERTY bJulianos
@@ -18,6 +19,7 @@ BOOL PROPERTY bMephala
 MESSAGE PROPERTY pPreviousWorshipRemovedMSG AUTO
 
 SPELL PROPERTY pChampionOfAkatosh AUTO
+SPELL PROPERTY pChampionOfAuriel AUTO
 SPELL PROPERTY pPrayToArkay AUTO
 SPELL PROPERTY pChampionOfDibella AUTO
 SPELL PROPERTY pChampionOfJulianos AUTO
@@ -38,6 +40,8 @@ EVENT onACTIVATE(OBJECTREFERENCE obj)
         doOnce = FALSE
 
         IF(bAkatosh && game.getPlayer().hasSpell(pChampionOfAkatosh))
+            doOnce = TRUE
+        ELSEIF(bAuriel && game.getPlayer().hasSpell(pChampionOfAuriel))
             doOnce = TRUE
         ELSEIF(bArkay && game.getPlayer().hasSpell(pPrayToArkay))
             doOnce = TRUE
@@ -75,6 +79,8 @@ endState
 FUNCTION addWorship()
 IF(bAkatosh)
     game.getPlayer().addSpell(pChampionOfAkatosh)
+ELSEIF(bAuriel)
+    game.getPlayer().addSpell(pChampionOfAuriel)
 ELSEIF(bArkay)
     game.getPlayer().addSpell(pPrayToArkay)
 ELSEIF(bDibella)
@@ -103,6 +109,8 @@ endFUNCTION
 FUNCTION removeWorship()
 IF(game.getPlayer().hasSpell(pChampionOfAkatosh))
     game.getPlayer().removeSpell(pChampionOfAkatosh)
+ELSEIF(game.getPlayer().hasSpell(pChampionOfAuriel))
+    game.getPlayer().removeSpell(pChampionOfAuriel)
 ELSEIF(game.getPlayer().hasSpell(pPrayToArkay))
     game.getPlayer().removeSpell(pPrayToArkay)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfDibella))
