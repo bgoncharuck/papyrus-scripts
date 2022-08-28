@@ -15,6 +15,7 @@ BOOL PROPERTY bZenithar
 BOOL PROPERTY bAzura
 BOOL PROPERTY bBoethiah
 BOOL PROPERTY bMephala
+BOOL PROPERTY bNocturnal
 
 MESSAGE PROPERTY pPreviousWorshipRemovedMSG AUTO
 
@@ -31,6 +32,7 @@ SPELL PROPERTY pChampionOfZenithar AUTO
 SPELL PROPERTY pPrayToAzura AUTO
 SPELL PROPERTY pChampionOfBoethiah AUTO
 SPELL PROPERTY pChampionOfMephala AUTO
+SPELL PROPERTY pPrayToNocturnal AUTO
 
 BOOL DOONCE=TRUE
 Auto State base
@@ -64,6 +66,8 @@ EVENT onACTIVATE(OBJECTREFERENCE obj)
         ELSEIF(bBoethiah && game.getPlayer().hasSpell(pChampionOfBoethiah))
             doOnce = TRUE
         ELSEIF(bMephala && game.getPlayer().hasSpell(pChampionOfMephala))
+            doOnce = TRUE
+        ELSEIF(bNocturnal && game.getPlayer().hasSpell(pPrayToNocturnal))
             doOnce = TRUE
 
         ELSE
@@ -103,6 +107,8 @@ ELSEIF(bBoethiah)
     game.getPlayer().addSpell(pChampionOfBoethiah)
 ELSEIF(bMephala)
     game.getPlayer().addSpell(pChampionOfMephala)
+ELSEIF(bNocturnal)
+    game.getPlayer().addSpell(pPrayToNocturnal)
 ENDIF
 endFUNCTION
 
@@ -133,5 +139,7 @@ ELSEIF(game.getPlayer().hasSpell(pChampionOfBoethiah))
     game.getPlayer().removeSpell(pChampionOfBoethiah)
 ELSEIF(game.getPlayer().hasSpell(pChampionOfMephala))
     game.getPlayer().removeSpell(pChampionOfMephala)
+ELSEIF(game.getPlayer().hasSpell(pPrayToNocturnal))
+    game.getPlayer().removeSpell(pPrayToNocturnal)
 ENDIF
 endFUNCTION
